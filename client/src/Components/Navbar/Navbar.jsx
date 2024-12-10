@@ -79,7 +79,7 @@ function Navbar() {
               <>
                 <RxAvatar
                   size={38}
-                  className="my-auto text-white md:text-black hover:text-blue-500 cursor-pointer "
+                  className="my-auto text-black dark:text-white hover:text-blue-500 cursor-pointer "
                   onClick={() => handleListShow()}
                 />
 
