@@ -39,7 +39,7 @@ function RecipeDetails() {
       
     };
     fetchProducts();
-    setisLoading(false);
+    
   }, [id]);
   const handleSaveRecipe = async (item) => {
     setloading(true);
@@ -79,7 +79,10 @@ function RecipeDetails() {
             transition: Bounce,
             });
     }
-    setloading(false);
+    finally
+    {
+      setloading(false);
+    }
   };
   return (
     <>
@@ -94,8 +97,9 @@ function RecipeDetails() {
             alt={item.title}
           />
           <button
+            disabled={loading}
             onClick={() => handleSaveRecipe(item)}
-            className="w-full py-3 my-6  bg-indigo-600 text-white font-semibold text-xl rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 "
+            className="w-full py-3 my-6  bg-indigo-600 text-white font-semibold text-xl rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300 disabled:bg-gray-400 disabled:text-gray-200 disabled:cursor-not-allowed"
           >
             Save Recipe
           </button>

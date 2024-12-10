@@ -1,6 +1,5 @@
 import React from "react";
-import { useState ,useRef} from "react";
-import { useDispatch ,useSelector} from "react-redux";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdLock } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,7 @@ import axios from "axios";
 import { toast,Bounce  } from "react-toastify";
 function Signup() {
   const navigate = useNavigate();
-  const submitButton = useRef(null)
+  
   const [loading, setloading] = useState(false)
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
@@ -19,7 +18,7 @@ function Signup() {
     e.preventDefault();
     try {
       setloading(true)
-      submitButton.current.disabled= true
+      
       const response=await axios.post('https://the-recipe-lab.onrender.com/api/auth/register', {
         name:name,
         email: email,
@@ -54,8 +53,10 @@ function Signup() {
         });
     }
     
-    setloading(false)
-    submitButton.current.disabled= false
+    finally
+    {
+      setloading(false);
+    }
     
   }
   return (
@@ -123,10 +124,10 @@ function Signup() {
               </div>
               
               <button
-                ref={submitButton}
+                disabled={loading}
                 
                 type="submit"
-                className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:bg-gray-400 disabled:text-gray-200 disabled:cursor-not-allowed dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Sign Up
               </button>
