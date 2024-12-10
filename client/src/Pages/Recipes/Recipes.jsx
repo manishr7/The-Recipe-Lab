@@ -23,7 +23,7 @@ function Recipes() {
       const fetchProducts = async () => {
         try {
           const response = await axios.get(
-            `/recipes/complexSearch?apiKey=6c465047e20d44b3a9f3e99c612dbcd2&number=50&type=${category}&addRecipeInformation=true`
+            `/recipes/complexSearch?apiKey=9b14f3e7a0f24496872a0b9dead9b65f&number=50&type=${category}&addRecipeInformation=true`
           );
           setfilteredProducts(response.data.results);
           setisLoading(false);
@@ -47,7 +47,7 @@ function Recipes() {
       const fetchProducts = async () => {
         try {
           const response = await axios.get(
-            `/recipes/random?apiKey=6c465047e20d44b3a9f3e99c612dbcd2&number=50`
+            `/recipes/random?apiKey=9b14f3e7a0f24496872a0b9dead9b65f&number=50`
           );
           setfilteredProducts(response.data.recipes);
           setisLoading(false);

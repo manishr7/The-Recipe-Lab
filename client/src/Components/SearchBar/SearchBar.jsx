@@ -14,7 +14,7 @@ function SearchBar() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-              const response = await axios.get(`/recipes/complexSearch?apiKey=6c465047e20d44b3a9f3e99c612dbcd2&query=${searchQuery}&number=10`);
+              const response = await axios.get(`/recipes/complexSearch?apiKey=9b14f3e7a0f24496872a0b9dead9b65f&query=${searchQuery}&number=10`);
               console.log(response.data);
              setfilteredProducts(response.data.results)
             } catch (error) {
@@ -29,7 +29,7 @@ function SearchBar() {
     console.log(searchQuery)
   return (
    
-<form className="max-w-3xl mx-auto my-16 ">   
+<form className="max-w-xs md:max-w-3xl mx-auto my-16 ">   
     <label htmlFor="default-search" className=" mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div className="relative">
         <div className=" absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -46,7 +46,7 @@ function SearchBar() {
       <p className="py-2 px-1 text-gray-500">No Products Found.</p>
     ) : (
       filteredProducts.map((item, index) => (
-        <Link to={`/recipes/search/${item.id}`} className="py-2 px-1 h-16 hover:bg-gray-300 flex" key={index}>
+        <Link state={item.id} to={`/recipes/search/${item.id}`} className="py-2 px-1 h-16 hover:bg-gray-300 flex" key={index}>
           {item.title}
           <img
             className="h-full w-10 my-auto ml-auto mr-3 cursor-pointer hover:scale-150 transition-all duration-300"

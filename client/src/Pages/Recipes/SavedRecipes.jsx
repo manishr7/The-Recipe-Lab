@@ -17,7 +17,7 @@ function SavedRecipes() {
     setisLoading(true);
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/getrecipe/${user.id}`);
+        const response = await axios.get(`https://the-recipe-lab.onrender.com/api/getrecipe/${user.id}`);
         setfilteredProducts(response.data);
       } catch (error) {
         toast.error(error.response.data, {

@@ -34,7 +34,7 @@ function RecipeDetails() {
         });
       }
       finally {
-        setisLoading(false); // Stop loading after everything is done
+        setisLoading(false); 
       }
       
     };
@@ -44,7 +44,7 @@ function RecipeDetails() {
   const handleSaveRecipe = async (item) => {
     setloading(true);
     try {
-      const response = await axios.post("http://localhost:8000/api/addrecipe", {
+      const response = await axios.post("https://the-recipe-lab.onrender.com/api/addrecipe", {
         userId: user.id,
         id: item.id,
         title: item.title,

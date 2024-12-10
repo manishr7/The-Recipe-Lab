@@ -20,7 +20,7 @@ function Signup() {
     try {
       setloading(true)
       submitButton.current.disabled= true
-      const response=await axios.post('http://localhost:8000/api/auth/register', {
+      const response=await axios.post('https://the-recipe-lab.onrender.com/api/auth/register', {
         name:name,
         email: email,
         password: password,
