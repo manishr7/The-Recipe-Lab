@@ -14,7 +14,7 @@ function SearchBar() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-              const response = await axios.get(`/recipes/complexSearch?apiKey=9b14f3e7a0f24496872a0b9dead9b65f&query=${searchQuery}&number=10`);
+              const response = await axios.get(`/recipes/complexSearch?apiKey=a8fef007e4f4404a8ee5c85760ee488a&query=${searchQuery}&number=10`);
               console.log(response.data);
              setfilteredProducts(response.data.results)
             } catch (error) {

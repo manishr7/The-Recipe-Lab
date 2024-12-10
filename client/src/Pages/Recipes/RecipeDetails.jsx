@@ -17,7 +17,7 @@ function RecipeDetails() {
     setisLoading(true);
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`/recipes/${id}/information?apiKey=9b14f3e7a0f24496872a0b9dead9b65f&includeNutrition=false`);
+        const response = await axios.get(`/recipes/${id}/information?apiKey=a8fef007e4f4404a8ee5c85760ee488a&includeNutrition=false`);
         setitem(response.data);
         console.log(response.data)
       } catch (error) {
