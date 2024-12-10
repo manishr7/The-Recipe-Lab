@@ -1,0 +1,37 @@
+.pro::after
+{
+    position: absolute;
+    z-index: 10;
+    top: 90%;
+    left: 65%;
+    height: 10%;
+    width: 40%;
+    font-size: larger;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: white;
+}
+.Main::after
+{
+    content: "Main Course";
+}
+.Dessert::after
+{
+    content: "Dessert ";
+}
+.Salad::after
+{
+    content: "Salad";
+}
+.Breakfast::after
+{
+    content: "Breakfast";
+}
+.Snack::after
+{
+    content: "Snack";
+}
+.Drink::after
+{
+    content: "Drinks";
+}

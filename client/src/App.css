@@ -1,0 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  display: none; 
+}
+a,li,p,h1,h2,h6,button{
+  caret-color: transparent;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
