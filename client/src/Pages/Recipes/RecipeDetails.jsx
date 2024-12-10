@@ -5,9 +5,10 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import { toast,Bounce  } from "react-toastify";
 import { useSelector} from "react-redux";
-import { debounce } from "lodash";
+import { useNavigate } from "react-router-dom";
 function RecipeDetails() {
   const location = useLocation();
+  const navigate = useNavigate();
   const id = location.state;
   const [item, setitem] = useState(null);
   const [loading, setloading] = useState(false);
@@ -43,6 +44,22 @@ function RecipeDetails() {
   }, [id]);
   const handleSaveRecipe = async (item) => {
     setloading(true);
+    if(!user)
+    {
+      toast.error("Please login first to access the saved recipes!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        });
+        navigate("/auth/login")
+    }
+    else {
     try {
       const response = await axios.post("https://the-recipe-lab.onrender.com/api/addrecipe", {
         userId: user.id,
@@ -83,6 +100,7 @@ function RecipeDetails() {
     {
       setloading(false);
     }
+  }
   };
   return (
     <>
