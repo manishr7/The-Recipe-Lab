@@ -170,7 +170,7 @@ function Navbar() {
               <li>
                 <Link
                   to={"/"}
-                  className="block relative py-2 px-3 text-xl active:text-blue-500 text-black bg-transparent before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full "
+                  className="block relative py-2 px-3 text-xl active:text-blue-500 text-black bg-transparent dark:bg-neutral-100 before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full "
                   aria-current="page"
                 >
                   Home
@@ -181,7 +181,7 @@ function Navbar() {
                 <p
 
                   onClick={handleWishlist}
-                  className="flex relative cursor-pointer  py-2 px-3 text-xl active:text-blue-500  text-black bg-transparent before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full"
+                  className="flex relative cursor-pointer  py-2 px-3 text-xl active:text-blue-500  text-black bg-transparent dark:bg-neutral-100 before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full"
                 >
                   Wishlist
                   <FaRegHeart className="ml-2 my-auto" size={18} />
@@ -190,7 +190,7 @@ function Navbar() {
               <li>
                 <Link
                   to={"/recipes"}
-                  className="flex relative  py-2 px-3 text-xl active:text-blue-500 text-black bg-transparent before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full"
+                  className="flex relative  py-2 px-3 text-xl active:text-blue-500 text-black bg-transparent dark:bg-neutral-100 before:absolute before:top-[100%] before:left-0 before:h-1 before:w-0 before:bg-blue-500 before:transition-all before:duration-500 hover:before:w-full"
                 >
                   Recipes
                   <BiFoodMenu className="ml-2 my-auto" size={20}/>
