@@ -61,7 +61,7 @@ function RecipeDetails() {
     }
     else {
     try {
-      const response = await axios.post("https://the-recipe-lab.onrender.com/api/addrecipe", {
+      const response = await axios.post("https://the-recipe-lab-production.up.railway.app/api/addrecipe", {
         userId: user.id,
         id: item.id,
         title: item.title,
